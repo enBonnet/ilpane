@@ -1,137 +1,156 @@
 {
 	"ingredients": [
 		{
-			"id": "flour-ap",
+			"id": "ap",
 			"name": "All-purpose flour",
 			"type": "flour",
 			"absorption": 60,
-			"flavor": "neutral, slightly nutty"
+			"flavor": "neutral, slightly nutty",
+			"default": 500
 		},
 		{
-			"id": "flour-bread",
+			"id": "bf",
 			"name": "Bread flour",
 			"type": "flour",
 			"absorption": 65,
-			"flavor": "slightly chewy, rich"
+			"flavor": "slightly chewy, rich",
+			"default": 0
 		},
 		{
-			"id": "flour-wholewheat",
+			"id": "ww",
 			"name": "Whole wheat flour",
 			"type": "flour",
 			"absorption": 75,
-			"flavor": "nutty, earthy"
+			"flavor": "nutty, earthy",
+			"default": 0
 		},
 		{
-			"id": "flour-rye",
+			"id": "ry",
 			"name": "Rye flour",
 			"type": "flour",
 			"absorption": 85,
-			"flavor": "slightly sour, malty"
+			"flavor": "slightly sour, malty",
+			"default": 0
 		},
 		{
-			"id": "flour-spelt",
+			"id": "sp",
 			"name": "Spelt flour",
 			"type": "flour",
 			"absorption": 60,
-			"flavor": "sweet, mild, nutty"
+			"flavor": "sweet, mild, nutty",
+			"default": 0
 		},
 		{
-			"id": "flour-multigrain",
+			"id": "mg",
 			"name": "Multigrain flour",
 			"type": "flour",
 			"absorption": 80,
-			"flavor": "complex, earthy"
+			"flavor": "complex, earthy",
+			"default": 0
 		},
 		{
-			"id": "add-in-oats",
+			"id": "oa",
 			"name": "Oats (rolled or crushed)",
 			"type": "add-in",
 			"absorption": 100,
-			"flavor": "mild, creamy"
+			"flavor": "mild, creamy",
+			"default": 0
 		},
 		{
-			"id": "liquid-eggs",
+			"id": "eg",
 			"name": "Eggs",
 			"type": "liquid",
 			"absorption": 75,
-			"flavor": "rich, slightly sweet"
+			"flavor": "rich, slightly sweet",
+			"default": 0
 		},
 		{
-			"id": "fat-olive-oil",
+			"id": "oo",
 			"name": "Olive oil",
 			"type": "fat",
 			"absorption": 0,
-			"flavor": "fruity, savory"
+			"flavor": "fruity, savory",
+			"default": 0
 		},
 		{
-			"id": "fat-butter",
+			"id": "bt",
 			"name": "Butter",
 			"type": "fat",
 			"absorption": 0,
-			"flavor": "creamy, slightly sweet"
+			"flavor": "creamy, slightly sweet",
+			"default": 0
 		},
 		{
-			"id": "sweet-honey",
+			"id": "hn",
 			"name": "Honey",
 			"type": "sweetener",
 			"absorption": 20,
-			"flavor": "sweet, floral"
+			"flavor": "sweet, floral",
+			"default": 0
 		},
 		{
-			"id": "sweet-molasses",
+			"id": "ml",
 			"name": "Molasses",
 			"type": "sweetener",
 			"absorption": 20,
-			"flavor": "bitter-sweet, robust"
+			"flavor": "bitter-sweet, robust",
+			"default": 0
 		},
 		{
-			"id": "seasoning-salt",
+			"id": "sl",
 			"name": "Salt",
 			"type": "seasoning",
 			"absorption": 0,
-			"flavor": "salty, enhances overall taste"
+			"flavor": "salty, enhances overall taste",
+			"default": 0
 		},
 		{
-			"id": "add-in-sunflower",
+			"id": "sf",
 			"name": "Sunflower seeds",
 			"type": "add-in",
 			"absorption": 15,
-			"flavor": "nutty"
+			"flavor": "nutty",
+			"default": 0
 		},
 		{
-			"id": "add-in-pumpkin",
+			"id": "pk",
 			"name": "Pumpkin seeds",
 			"type": "add-in",
 			"absorption": 15,
-			"flavor": "sweet, nutty"
+			"flavor": "sweet, nutty",
+			"default": 0
 		},
 		{
-			"id": "add-in-flax",
+			"id": "fx",
 			"name": "Flaxseeds (whole)",
 			"type": "add-in",
 			"absorption": 200,
-			"flavor": "nutty, earthy"
+			"flavor": "nutty, earthy",
+			"default": 0
 		},
 		{
-			"id": "add-in-chia",
+			"id": "ch",
 			"name": "Chia seeds",
 			"type": "add-in",
 			"absorption": 1000,
-			"flavor": "neutral, gelatinous texture"
+			"flavor": "neutral, gelatinous texture",
+			"default": 0
 		},
 		{
-			"id": "liquid-milk",
+			"id": "mk",
 			"name": "Milk",
 			"type": "liquid",
 			"absorption": 90,
-			"flavor": "creamy, sweet"
+			"flavor": "creamy, sweet",
+			"default": 0
 		},
 		{
-			"id": "liquid-yogurt",
+			"id": "yg",
 			"name": "Yogurt",
 			"type": "liquid",
 			"absorption": 85,
-			"flavor": "tangy, rich"
+			"flavor": "tangy, rich",
+			"default": 0
 		}
 	]
 }

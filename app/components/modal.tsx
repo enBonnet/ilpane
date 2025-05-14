@@ -1,11 +1,11 @@
-import { useEffect, useCallback, useRef } from "react";
+import { useEffect, useCallback } from "react";
 import { useNavigate } from "react-router";
 
 export const Modal = ({
-	title,
-	content,
-	action,
-}: { title: string; content: React.ReactNode; action?: React.ReactNode }) => {
+	children,
+}: {
+	children: React.ReactNode;
+}) => {
 	const navigate = useNavigate();
 
 	const handleClose = useCallback(() => {
@@ -28,11 +28,13 @@ export const Modal = ({
 
 	return (
 		<div className="fixed w-full h-full z-20 flex items-center justify-center">
-			<div className="absolute w-full h-full flex items-center justify-center bg-gray-800 opacity-50" />
-			<div className="bg-gradient-to-br from-[#f5e8d3] via-[#f4d9b5] to-[#f2c88d] rounded-lg p-4 shadow-lg z-30 text-black">
-				<h2 className="text-lg font-bold mb-4">{title}</h2>
-				<div className="mb-2">{content}</div>
-				{action ? <div className="mb-4">{action}</div> : null}
+			<div
+				className="absolute w-full h-full flex items-center justify-center bg-gray-800 opacity-50"
+				onClick={() => handleClose()}
+				onKeyDown={() => handleClose()}
+			/>
+			<div className="bg-gradient-to-br from-[#f5e8d3] via-[#f4d9b5] to-[#f2c88d] rounded-lg p-4 shadow-lg z-30 text-black overflow-y-auto max-h-[calc(100vh-4rem)]">
+				<div className="mb-2">{children}</div>
 			</div>
 		</div>
 	);

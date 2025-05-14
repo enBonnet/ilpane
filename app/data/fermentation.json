@@ -1,0 +1,22 @@
+{
+	"fermentation": [
+		{
+			"id": "sourdough",
+			"name": "Sourdough",
+			"description": "Sourdough fermentation",
+			"time": "24 hours"
+		},
+		{
+			"id": "yeast",
+			"name": "Yeast",
+			"description": "Yeast fermentation",
+			"time": "2 hours"
+		},
+		{
+			"id": "dry",
+			"name": "Dry yeast",
+			"description": "Dry yeast fermentation",
+			"time": "1 hour"
+		}
+	]
+}

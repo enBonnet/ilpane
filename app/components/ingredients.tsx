@@ -1,28 +1,19 @@
+import { useLocation } from "react-router";
+import { IngredientList } from "./ingredient-list";
+import qs from "qs";
+
 export const Ingredients = () => {
+	const location = useLocation();
+	const ingredients = qs.parse(location.search, {
+		ignoreQueryPrefix: true,
+	}) as Record<string, string>;
+
 	return (
 		<div>
-			<h2 className="font-bold mb-2">🍚 ¿Que ingredientes quieres usar?</h2>
-			<table className="text-left table-fixed w-full">
-				<thead>
-					<tr>
-						<th>Ingrediente</th>
-						<th>Cantidad (gr)</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Harina</td>
-						<td>
-							<input
-								type="text"
-								id="flour"
-								defaultValue="500"
-								className="px-4 py-3 w-full max-w-md rounded-xl bg-[#f5e8d3] text-[#3e2e1b] placeholder-[#9e7c55] border border-[#e2c6a1] focus:outline-none focus:ring-2 focus:ring-[#d09e60] focus:border-[#d09e60] transition"
-							/>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<h2 className="font-bold mb-2">Ingredients</h2>
+			<div className="flex flex-col gap-4">
+				<IngredientList ingredientsSelected={ingredients} />
+			</div>
 		</div>
 	);
 };
