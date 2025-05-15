@@ -8,7 +8,43 @@ import { Outlet } from "react-router";
 import { Logo } from "~/components/logo";
 
 export function meta() {
-	return [{ title: "Pair Pan" }, { name: "description", content: "Pair Pan" }];
+	return [
+		{ title: "Il Pane - Share Your Bread Recipes" },
+		{
+			name: "description",
+			content:
+				"Easily share your bread recipes with friends in just one click. Discover, create, and share amazing bread recipes with the Il Pane community.",
+		},
+		{
+			name: "keywords",
+			content:
+				"bread recipes, baking, recipe sharing, bread making, baking community",
+		},
+		{ name: "robots", content: "index, follow" },
+		{ property: "og:title", content: "Il Pane - Share Your Bread Recipes" },
+		{
+			property: "og:description",
+			content:
+				"Easily share your bread recipes with friends in just one click. Discover, create, and share amazing bread recipes with the Il Pane community.",
+		},
+		{ property: "og:type", content: "website" },
+		{
+			property: "og:image",
+			content: "https://ilpane.lat/images/og-image.jpg",
+		},
+		{ property: "og:url", content: "https://ilpane.lat" },
+		{ name: "twitter:card", content: "summary_large_image" },
+		{ name: "twitter:title", content: "Il Pane - Share Your Bread Recipes" },
+		{
+			name: "twitter:description",
+			content:
+				"Easily share your bread recipes with friends in just one click. Discover, create, and share amazing bread recipes with the Il Pane community.",
+		},
+		{
+			name: "twitter:image",
+			content: "https://ilpane.lat/images/og-image.jpg",
+		},
+	];
 }
 
 export default function Home() {
