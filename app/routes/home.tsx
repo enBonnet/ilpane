@@ -7,10 +7,7 @@ import { CopyRecipe } from "~/components/copy-recipe";
 import { Outlet } from "react-router";
 
 export function meta() {
-	return [
-		{ title: "Just Bread It" },
-		{ name: "description", content: "Just Bread It" },
-	];
+	return [{ title: "Pair Pan" }, { name: "description", content: "Pair Pan" }];
 }
 
 export default function Home() {

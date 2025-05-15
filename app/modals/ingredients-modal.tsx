@@ -32,7 +32,7 @@ const IngredientsModal = () => {
 		<Modal>
 			<form
 				onSubmit={handleSubmit}
-				className="max-w-full w-lg flex flex-col gap-4"
+				className="max-w-full w-lg flex flex-col gap-4 text-[#3e2e1b]"
 			>
 				<h2 className="text-lg font-bold mb-4">Ingredients</h2>
 				<IngredientInputList ingredients={ingredients} />
