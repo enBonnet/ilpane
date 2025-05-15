@@ -9,7 +9,6 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import { Logo } from "./components/logo";
 import "./app.css";
 
 const modalRoutes = ["/ingredients"];
@@ -21,7 +20,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 	const isModalOpen = modalRoutes.includes(location.pathname);
 
 	return (
-		<html lang="en">
+		<html lang="en" className="bg-[#d09e60]">
 			<head>
 				<meta charSet="utf-8" />
 				<meta
@@ -39,22 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<div className="relative min-h-screen bg-gradient-to-br from-[#f5e8d3] via-[#f4d9b5] to-[#f2c88d] overflow-hidden">
 					<div className="absolute -top-40 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-[#d09e60] rounded-full blur-[120px] opacity-40 z-0" />
 					<div className="absolute bottom-[-200px] right-[-100px] w-[500px] h-[500px] bg-[#f7c797] rounded-full blur-[100px] opacity-30 z-0" />
-					{children}
-					<div className="flex justify-center items-center gap-2 text-[#3e2e1b] mb-8">
-						<a
-							href="https://enbonnet.com/?ref=pairpan"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-lg inline-flex items-center gap-2"
-						>
-							Made with 💜 by{" "}
-							<div className="w-8">
-								<Logo />
-							</div>
-							<div className="hidden">By @enBonnet</div>
-						</a>
-						|<a href="https://github.com/enBonnet/justbreadit">GitHub</a>
-					</div>
+					{children}{" "}
 				</div>
 				<ScrollRestoration />
 				<Scripts />

@@ -5,11 +5,9 @@ export const CopyRecipe = () => {
 	const navigate = useNavigate();
 
 	const handleCopy = () => {
-		navigator.clipboard
-			.writeText(location.pathname + location.search)
-			.then(() => {
-				navigate(`/copied${location.search}`);
-			});
+		navigator.clipboard.writeText(window.location.href).then(() => {
+			navigate(`/copied${location.search}`);
+		});
 	};
 
 	return (

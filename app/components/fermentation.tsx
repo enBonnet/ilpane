@@ -27,7 +27,11 @@ export const Fermentation = () => {
 								name="fermentation"
 								value={fermentation.id}
 								onChange={handleChange}
-								defaultChecked={current.f === fermentation.id}
+								defaultChecked={
+									current.f
+										? current.f === fermentation.id
+										: fermentation.id === "sourdough"
+								}
 								className="mr-2"
 							/>
 							<label htmlFor={fermentation.id}>{fermentation.name}</label>
