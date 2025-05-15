@@ -78,7 +78,7 @@ export default function Home() {
 					</div>
 					<div className="hidden">By @enBonnet</div>
 				</a>
-				|<a href="https://github.com/enBonnet/il-pane">GitHub</a>
+				|<a href="https://github.com/enBonnet/ilpane">GitHub</a>
 			</div>
 		</>
 	);
