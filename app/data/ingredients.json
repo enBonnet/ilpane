@@ -154,7 +154,7 @@
 		},
 		{
 			"id": "wt",
-			"name": "Humidity",
+			"name": "Hydration",
 			"type": "liquid",
 			"absorption": 100,
 			"flavor": "neutral",

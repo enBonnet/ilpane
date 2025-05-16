@@ -50,7 +50,7 @@ export function meta() {
 export default function Home() {
 	return (
 		<>
-			<div className="relative z-10 flex w-full text-[#3e2e1b] mb-8 overflow-auto">
+			<div className="relative z-10 flex w-full text-[#3e2e1b] pb-8 overflow-auto">
 				<Outlet />
 				<div className="flex flex-col items-center w-full">
 					<div className="px-4 max-w-lg">
