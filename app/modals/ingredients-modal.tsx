@@ -14,15 +14,31 @@ const IngredientsModal = () => {
 		const selectedIngredients: Record<string, string> = {};
 
 		for (const ingredient of ingredients) {
-			if (formData.get(ingredient.id) !== "") {
+			if (
+				formData.get(ingredient.id) !== "" &&
+				formData.get(ingredient.id) !== "0"
+			) {
 				selectedIngredients[ingredient.id] = formData.get(
 					ingredient.id,
 				) as string;
 			}
 		}
 
+		const getExistingIngredients = () => {
+			const urlIngredients = qs.parse(location.search, {
+				ignoreQueryPrefix: true,
+			});
+			const cleanedUpIngredients: Record<string, string> = {};
+			Object.entries(urlIngredients).map(([id, quantity]) => {
+				if (quantity && quantity !== "0" && Number(quantity.length) > 0) {
+					cleanedUpIngredients[id] = quantity as string;
+				}
+			});
+			return cleanedUpIngredients;
+		};
+
 		const query = qs.stringify({
-			...qs.parse(location.search, { ignoreQueryPrefix: true }),
+			...getExistingIngredients(),
 			...selectedIngredients,
 		});
 		navigate(`/?${query}`);

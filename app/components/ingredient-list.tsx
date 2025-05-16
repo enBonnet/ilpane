@@ -16,7 +16,7 @@ export const IngredientItem = ({
 			</label>
 			<div className="flex gap-2 max-w-30">
 				<span className="self-center font-bold text-[#3e2e1b]">
-					{quantity} gr
+					{quantity} {id === "wt" ? "%" : "gr"}
 				</span>
 			</div>
 		</>

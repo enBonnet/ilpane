@@ -151,6 +151,14 @@
 			"absorption": 85,
 			"flavor": "tangy, rich",
 			"default": 0
+		},
+		{
+			"id": "wt",
+			"name": "Humidity",
+			"type": "liquid",
+			"absorption": 100,
+			"flavor": "neutral",
+			"default": 0
 		}
 	]
 }

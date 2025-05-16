@@ -67,7 +67,7 @@ export default function Home() {
 			</div>
 			<div className="flex justify-center items-center gap-2 text-[#3e2e1b] mb-8">
 				<a
-					href="https://enbonnet.com/?ref=pairpan"
+					href="https://enbonnet.com/?ref=ilpane"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-lg inline-flex items-center gap-2"

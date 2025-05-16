@@ -41,20 +41,20 @@ export const Recipe = () => {
 
 	function calculateBreadRecipe(ingredients: typeof selectedIngredients) {
 		let totalFlour = 0;
-		let totalAbsorption = 0;
 		let water = 0;
-		let salt = 0;
+		let salt = Number(ingredients.find((i) => i.id === "sl")?.quantity) || 0;
 		let ferment = 0;
 		let fermentTime = 0;
+		const hydrationPercent =
+			Number(ingredients.find((i) => i.id === "wt")?.quantity) || 0;
 
 		const fermentationType =
-			ingredients.find((i) => i.type === "fermentation")?.id ||
-			fermentation[0].id;
+			ingredients.find((i) => i.type === "fermentation")?.id || "dry";
 
 		const fermentationMap = {
-			sourdough: { percent: 0.2, time: 24 }, // 20% starter
-			yeast: { percent: 0.015, time: 2 }, // 1.5% fresh yeast
-			dry: { percent: 0.01, time: 1 }, // 1% dry yeast
+			sourdough: { percent: 0.2, time: 24 },
+			yeast: { percent: 0.025, time: 2 },
+			dry: { percent: 0.02, time: 1 },
 		};
 
 		for (const ingredient of ingredients) {
@@ -63,39 +63,54 @@ export const Recipe = () => {
 
 			if (ingredient.type === "flour") {
 				totalFlour += qty;
-				totalAbsorption += qty * (ingredient.absorption / 100);
-			} else if (
-				ingredient.type === "add-in" ||
-				ingredient.type === "sweetener"
-			) {
-				water += qty * (ingredient.absorption / 100);
-			} else if (ingredient.type === "liquid") {
-				water += qty;
 			}
 		}
 
-		// Water absorbed by flour
-		water += totalAbsorption;
+		// Calculate water based on target hydration or ingredients
+		if (hydrationPercent > 0) {
+			water = totalFlour * (hydrationPercent / 100);
+		} else {
+			let totalAbsorption = 0;
+
+			for (const ingredient of ingredients) {
+				const qty = Number.parseFloat(ingredient.quantity);
+				if (Number.isNaN(qty) || qty <= 0) continue;
+
+				if (ingredient.type === "flour") {
+					totalAbsorption += qty * (ingredient.absorption / 100);
+				} else if (
+					ingredient.type === "add-in" ||
+					ingredient.type === "sweetener"
+				) {
+					water += qty * (ingredient.absorption / 100);
+				} else if (ingredient.type === "liquid") {
+					water += qty;
+				}
+			}
+
+			// Add absorbed water from flour
+			water += totalAbsorption;
+		}
 
 		// Salt: 2% of total flour
-		salt = totalFlour * 0.02;
+		salt = totalFlour * 0.02 + salt;
 
-		// Yeast or sourdough: based on fermentation type
-		if (
-			fermentationType &&
-			fermentationMap[fermentationType as keyof typeof fermentationMap]
-		) {
-			const { percent, time } =
-				fermentationMap[fermentationType as keyof typeof fermentationMap];
-			ferment = totalFlour * percent;
-			fermentTime = time;
-		}
+		// Fermentation
+		const { percent, time } =
+			fermentationMap[fermentationType as keyof typeof fermentationMap] ||
+			fermentationMap.dry;
+
+		ferment = totalFlour * percent;
+		fermentTime = time;
+
+		const hydration = (water / totalFlour) * 100;
 
 		return {
 			flour: totalFlour,
 			water: Math.round(water),
-			salt: Math.round(salt * 10) / 10,
-			ferment: Math.round(ferment * 10) / 10,
+			salt: Math.round(Math.round(salt * 10) / 10),
+			ferment: Math.round(Math.round(ferment * 10) / 10),
+			hydration: Math.round(Math.round(hydration * 10) / 10),
 			fermentationType,
 			fermentationTime: fermentTime,
 		};
@@ -119,11 +134,11 @@ export const Recipe = () => {
 						<td>{recipe.flour}gr</td>
 					</tr>
 					<tr>
-						<td>Sal (2%)</td>
+						<td>Sal (+2%)</td>
 						<td>{recipe.salt}gr</td>
 					</tr>
 					<tr>
-						<td>Water</td>
+						<td>Water ({recipe.hydration}%)</td>
 						<td>{recipe.water}gr</td>
 					</tr>
 					<tr>
