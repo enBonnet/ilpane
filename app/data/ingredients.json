@@ -49,6 +49,22 @@
 			"default": 0
 		},
 		{
+			"id": "lp",
+			"name": "Lupin flour",
+			"type": "flour",
+			"absorption": 85,
+			"flavor": "slightly bitter, earthy, nutty",
+			"default": 0
+		},
+		{
+			"id": "mm",
+			"name": "Maca flour blend",
+			"type": "flour",
+			"absorption": 70,
+			"flavor": "sweet, earthy, malty",
+			"default": 0
+		},
+		{
 			"id": "oa",
 			"name": "Oats (rolled or crushed)",
 			"type": "add-in",
